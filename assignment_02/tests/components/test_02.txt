@@ -1,0 +1,5 @@
+Algorithm: Triangle Counting
+
+Total triangles: 1
+Triangles found:
+(0, 1, 2)

@@ -1,0 +1,11 @@
+Algorithm: Connected Components
+Number of components: 4
+Vertex Component
+0 0
+1 0
+2 0
+3 0
+4 1
+5 1
+6 2
+7 3
