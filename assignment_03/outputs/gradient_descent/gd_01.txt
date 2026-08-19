@@ -1,0 +1,2 @@
+Expected x*: 3.0
+Expected f(x*): 0
