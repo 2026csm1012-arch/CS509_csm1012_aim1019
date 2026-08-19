@@ -1,2 +1,0 @@
-Maximum flow: 13
-Minimum cut capacity: 13
