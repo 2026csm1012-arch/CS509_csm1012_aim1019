@@ -13,10 +13,9 @@ The assignment specifies generic one-variable polynomial Gradient Descent and di
 
 - **Assignment Mode:** Buddy / Double
 - **Student 1:** Rajan Jha
-- **Entry Number:** __________________
-- **Student 2:** __________________
-- **Entry Number:** __________________
-
+- **Entry Number:** 2026AIM1019
+- **Student 2:** Deepak Kumar
+- **Entry Number:** 2026CSM1012
 ## Language and Environment
 
 - **Language:** C++17
@@ -247,8 +246,4 @@ Execution time: <value> ms
 
 The maximum flow and minimum cut capacity must be equal. Different valid minimum-cut partitions are possible. fileciteturn0file0L172-L186
 
-## References
 
-1. Stanford CS231n — Loss Functions and Optimization. fileciteturn0file0L7-L10
-2. MIT OpenCourseWare 6.046J — Max Flow, Min Cut. fileciteturn0file0L21-L22
-3. CS509 Assignment 03 specification.
