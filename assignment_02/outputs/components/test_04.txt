@@ -1,6 +1,13 @@
-Algorithm: Triangle Counting
-
-Total triangles: 2
-Triangles found:
-(0, 1, 2)
-(0, 3, 4)
+Algorithm: Connected Components
+Number of components: 1
+Vertex Component
+0 0
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+9 0

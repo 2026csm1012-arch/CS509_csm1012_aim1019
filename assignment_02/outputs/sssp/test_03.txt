@@ -1,6 +1,0 @@
-Algorithm: SSSP
-
-Source: 0
-
-Vertex	Distance
-0	0

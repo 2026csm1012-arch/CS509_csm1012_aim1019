@@ -1,3 +1,0 @@
-Algorithm: Connected Components
-Number of components: 0
-Vertex Component

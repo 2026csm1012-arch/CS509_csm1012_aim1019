@@ -12,13 +12,8 @@
 #include "graph_io.h"
 #include "csr.h"
 #include "timer.h"
-#include "bfs.h"
 #include "output.h"
 #include "compare.h"
-#include "dfs.h"
-#include "sssp.h"
-#include "bellman_ford.h"
-#include "floyd_warshall.h"
 #include "triangle.h"
 #include "betweenness.h"
 #include "components.h"
@@ -62,9 +57,6 @@ void createGeneratedDirectory(const string &folder)
     }
 }
 
-//---------------------------------------------------------
-// Print Header
-//---------------------------------------------------------
 void printHeader(const string &algorithm)
 {
     cout << "=========================================\n";
@@ -79,9 +71,6 @@ void printHeader(const string &algorithm)
     cout << "----------------------------------------------------------\n";
 }
 
-//---------------------------------------------------------
-// Print Summary
-//---------------------------------------------------------
 void printSummary(int passed, int failed)
 {
     cout << "\n=========================================\n";
@@ -203,93 +192,6 @@ void runAlgorithm(
 }
 
 //---------------------------------------------------------
-// Run BFS Test Suite
-//---------------------------------------------------------
-void runBFS()
-{
-    runAlgorithm(
-        "bfs",
-
-        [](const CSRGraph &csr,
-           int source,
-           const string &generatedFile) -> double
-        {
-            Timer timer;
-
-            timer.start();
-
-            BFSResult result = BFS(csr, source);
-
-            timer.stop();
-
-            writeBFSOutput(
-                generatedFile,
-                result,
-                source);
-
-            return timer.elapsedMilliseconds();
-        });
-}
-//---------------------------------------------------------
-// Run DFS Test Suite
-//---------------------------------------------------------
-void runDFS()
-{
-    runAlgorithm(
-        "dfs",
-
-        [](const CSRGraph &csr,
-           int source,
-           const string &generatedFile) -> double
-        {
-            Timer timer;
-
-            timer.start();
-
-            DFSResult result = DFS(csr, source);
-
-            timer.stop();
-
-            writeDFSOutput(
-                generatedFile,
-                result,
-                source);
-
-            return timer.elapsedMilliseconds();
-        });
-}
-
-//---------------------------------------------------------
-// Run SSSP Test Suite
-//---------------------------------------------------------
-void runSSSP()
-{
-    runAlgorithm(
-        "sssp",
-
-        [](const CSRGraph &csr,
-           int source,
-           const string &generatedFile) -> double
-        {
-            Timer timer;
-
-            timer.start();
-
-            SSSPResult result = SSSP(csr, source);
-
-            timer.stop();
-
-            writeSSSPOutput(
-                generatedFile,
-                result,
-                source);
-
-            return timer.elapsedMilliseconds();
-        },
-        true // SSSP test files use the weighted adjacency-list format
-        );
-}
-//---------------------------------------------------------
 // Generic runner for global (no SOURCE) algorithms
 //---------------------------------------------------------
 void runGlobalAlgorithm(
@@ -338,63 +240,6 @@ void runGlobalAlgorithm(
     }
 
     printSummary(passed, failed);
-}
-
-//---------------------------------------------------------
-// Bellman-Ford Test Suite
-//---------------------------------------------------------
-void runBellmanFord()
-{
-    runAlgorithm(
-        "bellman_ford",
-        [](const CSRGraph &csr, int source,
-           const string &generatedFile) -> double
-        {
-            Timer timer;
-            timer.start();
-
-            BellmanFordResult result =
-                bellmanFord(csr, source);
-
-            timer.stop();
-
-            writeBellmanFordOutput(
-                generatedFile, result, source);
-
-            return timer.elapsedMilliseconds();
-        },
-        true);
-}
-
-//---------------------------------------------------------
-// Floyd-Warshall Test Suite
-//---------------------------------------------------------
-void runFloydWarshall()
-{
-    runAlgorithm(
-        "floyd_warshall",
-        [](const CSRGraph &csr, int,
-           const string &generatedFile) -> double
-        {
-            // Matrix construction is preprocessing and is deliberately
-            // performed before the timer starts.
-            vector<vector<long long>> matrix =
-                buildDistanceMatrix(csr);
-
-            Timer timer;
-            timer.start();
-
-            FloydWarshallResult result =
-                floydWarshall(matrix);
-
-            timer.stop();
-
-            writeFloydWarshallOutput(
-                generatedFile, result);
-
-            return timer.elapsedMilliseconds();
-        },
-        true);
 }
 
 //---------------------------------------------------------

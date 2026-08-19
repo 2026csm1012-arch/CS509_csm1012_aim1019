@@ -1,5 +1,5 @@
-Algorithm: Triangle Counting
-
-Total triangles: 1
-Triangles found:
-(0, 1, 2)
+Algorithm: Betweenness Centrality
+Vertex Centrality
+0 0.00
+1 0.00
+2 0.00

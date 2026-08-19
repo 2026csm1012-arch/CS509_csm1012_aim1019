@@ -4,9 +4,6 @@
 #include <iostream>
 #include <string>
 
-//------------------------------------------------------
-// Compare Two Output Files
-//------------------------------------------------------
 bool compareFiles(const std::string &expectedFile,
                   const std::string &generatedFile)
 {
