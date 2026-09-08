@@ -1,0 +1,42 @@
+
+=============================================
+ Assignment 04 - Buddy Task
+=============================================
+1. K-Means Clustering
+2. FastMap
+0. Exit
+Enter choice: 
+Test cases:
+1. fm_01.txt (N=10, k=2)
+2. fm_02.txt (N=100, k=2)
+3. fm_03.txt (N=1000, k=3)
+4. fm_04.txt (N=10000, k=3; generate with tools)
+Enter test case: 
+Algorithm: FastMap
+N: 10
+Target dimensions: 2
+Pivots per dimension:
+Dim 1: 9 0
+Dim 2: 0 0
+Object coordinates:
+0: 9.0000000000 0.0000000000
+1: 8.0000000000 0.0000000000
+2: 7.0000000000 0.0000000000
+3: 6.0000000000 0.0000000000
+4: 5.0000000000 0.0000000000
+5: 4.0000000000 0.0000000000
+6: 3.0000000000 0.0000000000
+7: 2.0000000000 0.0000000000
+8: 1.0000000000 0.0000000000
+9: 0.0000000000 0.0000000000
+Execution time: 0.0029250000 ms
+
+Test finished. Returning to menu...
+
+=============================================
+ Assignment 04 - Buddy Task
+=============================================
+1. K-Means Clustering
+2. FastMap
+0. Exit
+Enter choice: 

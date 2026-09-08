@@ -14,9 +14,10 @@ int main()
     std::cout << "  1. Assignment 01\n";
     std::cout << "  2. Assignment 02\n";
     std::cout << "  3. Assignment 03\n";
+    std::cout << "  4. Assignment 04\n";
     std::cout << "\n";
 
-    std::cout << "Enter your choice (1-3): ";
+    std::cout << "Enter your choice (1-4): ";
 
     int choice;
 
@@ -30,21 +31,26 @@ int main()
 
     switch (choice)
     {
-        case 1:
-            command = "cd assignment_01 && ./graph_runner";
-            break;
+    case 1:
+        command = "cd assignment_01 && ./graph_runner";
+        break;
 
-        case 2:
-            command = "cd assignment_02 && ./graph_runner";
-            break;
+    case 2:
+        command = "cd assignment_02 && ./graph_runner";
+        break;
 
-        case 3:
-            command = "cd assignment_03 && ./graph_runner";
-            break;
+    case 3:
+        command = "cd assignment_03 && ./graph_runner";
+        break;
 
-        default:
-            std::cerr << "Invalid choice. Please enter 1, 2, or 3.\n";
-            return 1;
+    case 4:
+        command = "cd assignment_04 && ./graph_runner";
+        std::cout<<122336544;
+        break;
+
+    default:
+        std::cerr << "Invalid choice. Please enter 1, 2, 3 or 4.\n";
+        return 1;
     }
 
     std::cout << "\nStarting Assignment " << choice << "...\n\n";

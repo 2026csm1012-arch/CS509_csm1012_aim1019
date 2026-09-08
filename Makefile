@@ -2,7 +2,7 @@
 # Common Makefile
 # ============================================================
 
-ASSIGNMENTS := assignment_01 assignment_02 assignment_03
+ASSIGNMENTS := assignment_01 assignment_02 assignment_03 assignment_04
 
 CXX := g++
 CXXFLAGS := -std=c++17 -Wall -Wextra -O2
@@ -24,6 +24,7 @@ build:
 	@$(MAKE) -C assignment_01 all
 	@$(MAKE) -C assignment_02 all
 	@$(MAKE) -C assignment_03 all
+	@$(MAKE) -C assignment_04 all
 	@echo ""
 	@echo "All assignments built successfully."
 
@@ -39,6 +40,9 @@ assignment_02:
 
 assignment_03:
 	$(MAKE) -C assignment_03 all
+	
+assignment_04:
+	$(MAKE) -C assignment_04 all
 
 # ------------------------------------------------------------
 # Run individual assignments
@@ -52,6 +56,9 @@ run2: assignment_02
 
 run3: assignment_03
 	@cd assignment_03 && ./graph_runner
+
+run4: assignment_04
+	@cd assignment_04 && ./graph_runner
 
 # ------------------------------------------------------------
 # Build common wrapper
@@ -78,6 +85,7 @@ clean:
 	@$(MAKE) -C assignment_01 clean
 	@$(MAKE) -C assignment_02 clean
 	@$(MAKE) -C assignment_03 clean
+	@$(MAKE) -C assignment_04 clean
 	@rm -f common_wrapper
 	@echo ""
 	@echo "Clean completed."
@@ -102,10 +110,11 @@ help:
 	@echo "  make run1         Run Assignment 1"
 	@echo "  make run2         Run Assignment 2"
 	@echo "  make run3         Run Assignment 3"
+	@echo "  make run4         Run Assignment 4"
 	@echo "  make clean        Clean all assignments"
 	@echo "  make rebuild      Clean and rebuild"
 	@echo "  make help         Show this help"
 	@echo ""
 
-.PHONY: all build assignment_01 assignment_02 assignment_03 \
-        run1 run2 run3 run common_wrapper clean rebuild help
+.PHONY: all build assignment_01 assignment_02 assignment_03 assignment_04 \
+        run1 run2 run3 run4 run common_wrapper clean rebuild help
